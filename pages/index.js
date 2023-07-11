@@ -3,16 +3,16 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import getSortedPostsData from '../lib/posts';
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
   };
-};
+}
 
-const Home = ({ allPostsData }) => {
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -43,6 +43,4 @@ const Home = ({ allPostsData }) => {
       </section>
     </Layout>
   );
-};
-
-export default Home;
+}

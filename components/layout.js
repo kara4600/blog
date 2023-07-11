@@ -6,7 +6,7 @@ import Link from 'next/link';
 const name = 'KRizzardi';
 export const siteTitle = 'Blog';
 
-const Layout = ({ children, home }) => {
+export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,6 +37,4 @@ const Layout = ({ children, home }) => {
       )}
     </div>
   );
-};
-
-export default Layout;
+}
